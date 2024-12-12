@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Художники</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        :root {
+            --primary-color: #ffcc00; /* Yellow-Orange */
+            --secondary-color: #333333; /* Dark Gray */
+            --background-color: #f4f4f4; /* Light Background */
+            --text-color: #333333; /* Dark Text */
+            --accent-color: #ff6600; /* Accent Orange */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Таблица художников</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ID телеграмм</th>
+            <th>Имя пользователя</th>
+            <th>Описание</th>
+            <th>Ссылка телеграмм</th>
+            <th>Действие</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td><a href="https://t.me/{{ row[4] }}" target="_blank">{{ row[4] }}</a></td>
+            <td><a href="/delete_artist/{{ row[0] }}"><button>Удалить</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="center">
+        <a href="/"><button>На главную</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        :root {
+            --primary-color: #ffcc00; /* Yellow-Orange */
+            --secondary-color: #333333; /* Dark Gray */
+            --background-color: #f4f4f4; /* Light Background */
+            --text-color: #333333; /* Dark Text */
+            --accent-color: #ff6600; /* Accent Orange */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .center a {
+            margin: 10px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <h1>Админ панель</h1>
+    <div class="center">
+        <a href="/artist"><button>Художники</button></a>
+        <a href="/customer"><button>Заказчики</button></a>
+        <a href="/main"><button>Главная</button></a>
+    </div>
+</body>
+</html>

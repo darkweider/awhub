@@ -1,0 +1,55 @@
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .artist-block {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .artist-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .artist-block h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .artist-block p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .back-to-top, .go-home {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+        .back-to-top:hover, .go-home:hover {
+            background-color: #555;
+        }
+        .go-home {
+            bottom: 70px; /* Adjust the position to place it above the "Back to Top" button */
+        }
