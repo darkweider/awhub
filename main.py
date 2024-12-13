@@ -22,7 +22,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-API_TOKEN = '7289461911:AAHQCesDv_AWBjA7Nlz5TfSy2XlQ-dhac6Q'
+API_TOKEN = 'token'
 bot = AsyncTeleBot(API_TOKEN)
 
 # Путь к файлам базы данных и Excel
